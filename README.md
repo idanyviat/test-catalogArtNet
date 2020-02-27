@@ -1,1 +1,1 @@
-# test-catalogArtNet
+# test-catalog
