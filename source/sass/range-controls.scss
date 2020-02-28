@@ -1,0 +1,37 @@
+.range-controls {
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 32px;
+  .range-controls--scale {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .range-controls--bar {
+    width: 80%;
+    height: 2px;
+    background: #27a8dd;
+  }
+}
+
+.range-controls__toggle {
+  position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background: #e7e7e7;
+  border: 8px solid #e7e7e7;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+
+  .range-controls__toggle:hover {
+    background: #1c4f80;
+  }
+}
+.range-controls__min {
+  left: 137px;
+}
+.range-controls__max {
+  left: 62%;
+}

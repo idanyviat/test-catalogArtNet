@@ -57,10 +57,21 @@ body {
   list-style-type: none;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s; }
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; }
+  .catalog__item .catalog__item--slider {
+    position: relative;
+    width: 300px;
+    overflow: hidden; }
+  .catalog__item .catalog__item--line {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    left: 0;
+    -webkit-transition: all 1s;
+    transition: all 1s; }
   .catalog__item .catalog__item--image img {
     width: 300px;
     height: 300px; }
@@ -100,8 +111,227 @@ ul:hover {
     height: 20px;
     background: white; }
 
+.catalog__popup {
+  position: absolute;
+  top: 190px;
+  z-index: 2;
+  width: 568px;
+  height: 395px;
+  -webkit-box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+          box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+  border: 0;
+  background-color: white;
+  margin: 0;
+  margin-bottom: -500px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-animation: 0.6s;
+          animation: 0.6s; }
+
+.catalog__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .catalog__filter .catalog__filter--price {
+    text-align: center; }
+  .catalog__filter .catalog__filter--controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: relative;
+    width: 214px;
+    height: 36px;
+    margin-bottom: 20px;
+    margin-left: 197px;
+    font-size: 0;
+    background-color: #f3f3f3;
+    border: 2px solid #f3f3f3;
+    border-radius: 5px; }
+    .catalog__filter .catalog__filter--controls ::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 43px;
+      background: #ffffff;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+    .catalog__filter .catalog__filter--controls label {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 30px;
+      vertical-align: top;
+      cursor: pointer; }
+    .catalog__filter .catalog__filter--controls input {
+      width: 50px;
+      margin: 0;
+      color: inherit;
+      font: inherit;
+      background: none;
+      border: none;
+      outline: none; }
+    .catalog__filter .catalog__filter--controls .min-price,
+    .catalog__filter .catalog__filter--controls .max-price {
+      color: black;
+      width: 100px;
+      font-size: 16px;
+      padding-left: 22px;
+      line-height: 3px; }
+
+.catalog__close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3; }
+
+.catalog__close:hover {
+  opacity: 1; }
+
+.catalog__close:before,
+.catalog__close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #333; }
+
+.catalog__close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.catalog__close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+
 @media (min-width: 768px) {
   ul:hover .catalog__item--image {
     width: 300px; } }
+
+.hidden {
+  position: relative;
+  top: -3000px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-animation: 0.6s;
+          animation: 0.6s; }
+
+.range-controls {
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 32px; }
+  .range-controls .range-controls--scale {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3); }
+  .range-controls .range-controls--bar {
+    width: 80%;
+    height: 2px;
+    background: #27a8dd; }
+
+.range-controls__toggle {
+  position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background: #e7e7e7;
+  border: 8px solid #e7e7e7;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+          box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer; }
+  .range-controls__toggle .range-controls__toggle:hover {
+    background: #1c4f80; }
+
+.range-controls__min {
+  left: 137px; }
+
+.range-controls__max {
+  left: 62%; }
+
+input[type="range"][multiple] {
+  display: block;
+  height: 20px;
+  margin: 0;
+  margin-left: 110px;
+  width: 65%;
+  pointer-events: none;
+  -webkit-appearance: none; }
+  input[type="range"][multiple] + input[type="range"][multiple] {
+    margin-top: -20px; }
+
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  z-index: 1;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -8px;
+  width: 4px;
+  height: 4px;
+  background: #e7e7e7;
+  border: 8px solid #e7e7e7;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer; }
+
+input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  z-index: 1;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -8px;
+  width: 4px;
+  height: 4px;
+  background: #e7e7e7;
+  border: 8px solid #e7e7e7;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer; }
+
+input[type="range"]::-ms-thumb {
+  pointer-events: all;
+  z-index: 1;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -8px;
+  width: 4px;
+  height: 4px;
+  background: #e7e7e7;
+  border: 8px solid #e7e7e7;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer; }
+
+input[type="range"]::-webkit-slider-runnable-track {
+  cursor: pointer;
+  height: 2px;
+  position: relative;
+  background: #27a8dd; }
+
+input[type="range"]::-moz-range-track {
+  cursor: pointer;
+  height: 2px;
+  position: relative;
+  background: #27a8dd; }
 
 /*# sourceMappingURL=style.css.map */
