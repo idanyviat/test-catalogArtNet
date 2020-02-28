@@ -18,8 +18,25 @@
     list-style-type: none;
 
     .catalog__item--image img {
-        width: 300px;
-        height: 300px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .catalog__item--name {
+      font-size: 16px;
+    }
+
+    .catalog__item--price {
+      font-weight: 700;
+    }
+
+    .catalog__item--button button {
+      font-size: 16px;
+      width: 100%;
+      text-transform: uppercase;
+      color: white;
+      background-color: green;
+      border: 0;
     }
 }
 
