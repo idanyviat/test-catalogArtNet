@@ -1,3 +1,4 @@
+'use strict'
 var button = document.querySelector('button');
 var slider = document.getElementById('Range-second');
 var sliderSecond = document.getElementById('Range-first');
@@ -42,9 +43,7 @@ catalogImage.onclick = function () {
     }
 }
 
-
 slides.onmouseover = slides.onmouseout = handler;
-
 function handler(event) {
     function str(el) {
         if (!el) return "null"
@@ -63,7 +62,6 @@ button.addEventListener('click', function (evt) {
     evt.preventDefault();
     popup.classList.toggle('hidden');
 });
-
 close.addEventListener('click', function (evt) {
     evt.preventDefault();
     popup.classList.add('hidden');
@@ -71,11 +69,9 @@ close.addEventListener('click', function (evt) {
 
 output.innerHTML = slider.value;
 outputSecond.innerHTML = sliderSecond.value;
-
 sliderSecond.oninput = function () {
     outputSecond.innerHTML = this.value;
 }
-
 slider.oninput = function () {
     output.innerHTML = this.value;
 }
@@ -87,4 +83,5 @@ form.addEventListener('submit', function (evt) {
     });
     evt.preventDefault();
 });
+
 

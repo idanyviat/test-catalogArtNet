@@ -1,5 +1,5 @@
 (function () {
-    var URL = 'https:/lalala-nettakogoadresa-rrrrr.com/';
+    var URL = '';
     window.upload = function (data, onSuccess) {
         var xhr = new XMLHttpRequest();
         xhr.responseType = 'json';

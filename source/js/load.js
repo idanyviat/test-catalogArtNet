@@ -1,5 +1,5 @@
 (function () {
-    var URL = 'https://js.dump/data';
+    var URL = '';
     var StatusCode = {
         OK: 200
     };
@@ -28,6 +28,20 @@
         xhr.addEventListener('load', function () {
             onSuccess(xhr.response);
         });
+
+        document.querySelectorAll('.catalog__item--button').addEventListener('click', loadInfo);
+        function loadInfo() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', requestOBJ, true);
+        }
+        xhr.onload = function () {
+            if (this.status == 200) {
+                document.getElementById('inform').innerHTML = this.responseInform;
+            }
+            else {
+                document.getElementById('inform').innerHTML = 'Не найдено';
+            }
+        };
 
         xhr.send();
     };
