@@ -41,6 +41,8 @@ catalogImage.onclick = function () {
         step++;
     }
 }
+
+
 slides.onmouseover = slides.onmouseout = handler;
 
 function handler(event) {
@@ -77,3 +79,12 @@ sliderSecond.oninput = function () {
 slider.oninput = function () {
     output.innerHTML = this.value;
 }
+
+var form = document.querySelector('.setup-form');
+form.addEventListener('submit', function (evt) {
+    window.upload(new FormData(form), function (response) {
+        popup.classList.add('hidden');
+    });
+    evt.preventDefault();
+});
+
