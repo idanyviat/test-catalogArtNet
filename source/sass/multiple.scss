@@ -1,5 +1,5 @@
 $multiRangeHeight: 20px;
-input[type="range"][multiple] {
+input[type="range"] {
   display: block;
   height: $multiRangeHeight;
   margin: 0;
@@ -8,7 +8,7 @@ input[type="range"][multiple] {
   pointer-events: none;
   -webkit-appearance: none;
 
-  & + input[type="range"][multiple] {
+  & + input[type="range"] {
     margin-top: $multiRangeHeight * -1;
   }
 }
