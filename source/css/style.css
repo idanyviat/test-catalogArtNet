@@ -334,4 +334,21 @@ input[type="range"]::-moz-range-track {
   position: relative;
   background: #27a8dd; }
 
+.setup-form {
+  margin-top: 10px; }
+
+.setup-form__name {
+  margin-left: 15px; }
+  .setup-form__name input {
+    margin-left: 10px; }
+
+.setup-form__email {
+  margin-left: 15px; }
+  .setup-form__email input {
+    margin-left: 10px; }
+
+.setup-form__button {
+  margin-top: 20px;
+  margin-left: 43%; }
+
 /*# sourceMappingURL=style.css.map */
